@@ -16,19 +16,12 @@ const SeriesList = (props: IProps) => {
 
     const { series } = props;
 
-    const tempSerie: ISeries = {
-        id: 'wew',
-        updatedAt: '08-03-2020',
-        currentEpisode: 2,
-        totalEpisodes: 32,
-        name: 'God of Highschool'
-    };
 
     const renderSeries = (): JSX.Element => {
         if (series.length > 0) {
             return (
                 <>
-                    { series.map((s) => <SeriesListItem key={s.id} serie={s} />)}
+                    { series.map((s) => <SeriesListItem key={s.id} series={s} />)}
                     <Link to={'/series/create'}>
                         <FloatingActionButton />
                     </Link>
@@ -59,5 +52,5 @@ const mapStateToProps = (state: IRootState): IProps => {
 };
 
 export default connect(
-    mapStateToProps
+    mapStateToProps,
 )(SeriesList);

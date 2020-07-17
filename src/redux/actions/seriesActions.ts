@@ -13,3 +13,35 @@ export const createSeries = (name: string, totalEpisodes: number): ISeriesAction
         updatedAt: moment().toISOString()
     }
 });
+
+export const updateSeries = (id: string, name: string, totalEpisodes: number): ISeriesAction => ({
+    type: SeriesAction.UPDATE_SERIES,
+    payload: {
+        id,
+        name,
+        totalEpisodes,
+        updatedAt: moment().toISOString()
+    }
+});
+
+export const deleteSeries = (id: string): ISeriesAction => ({
+    type: SeriesAction.DELETE_SERIES,
+    payload: {
+        id
+    }
+});
+
+export const increaseEpisodeCount = (id: string): ISeriesAction => ({
+    type: SeriesAction.INCREASE_COUNT,
+    payload: {
+        id
+    }
+});
+
+export const decreaseEpisodeCount = (id: string): ISeriesAction => ({
+    type: SeriesAction.DECREASE_COUNT,
+    payload: {
+        id
+    }
+});
+

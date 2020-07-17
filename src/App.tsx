@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {BrowserRouter as Router, Switch, Route, useHistory} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './App.css';
 import Layout from "./components/layout/Layout";
 import NoteIndex from "./pages/notes";
@@ -7,12 +7,10 @@ import {Provider} from "react-redux";
 import store from "./redux/store";
 import TodoIndex from "./pages/todos";
 import SeriesIndex from "./pages/series";
-import LocalStorageService from "./services/LocalStorageService";
 
 
 function App() {
 
-    const history = useHistory();
 
     useEffect(() => {
 

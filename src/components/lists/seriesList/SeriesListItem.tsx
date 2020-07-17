@@ -5,36 +5,46 @@ import styles from '../ListItem.module.css';
 import seriesStyles from './SeriesListItem.module.css';
 import moment from "moment";
 import Button from "../../Button";
+import {connect} from "react-redux";
+import {decreaseEpisodeCount, increaseEpisodeCount} from "../../../redux/actions/seriesActions";
 
 interface IProps {
-    serie: ISeries;
+    series: ISeries;
+    increaseEpisodeCount: (id: string) => void;
+    decreaseEpisodeCount: (id: string) => void;
 }
 
 const SeriesListItem = (props: IProps) => {
 
-    const { serie } = props;
+    const { series, increaseEpisodeCount, decreaseEpisodeCount } = props;
 
     return (
         <div className={`${styles.listItem}`}>
-            <Link to={`/series/${serie.id}`} className={`${styles.leftContainer} ${styles.regularItem}`}>
-                <h4>{ serie.name }</h4>
-                { `${serie.currentEpisode} / ${serie.totalEpisodes} episodes watched.`}
+            <Link to={`/series/${series.id}`} className={`${styles.leftContainer} ${styles.regularItem}`}>
+                <h4>{ series.name }</h4>
+                { `${series.currentEpisode} / ${series.totalEpisodes} episodes watched.`}
             </Link>
 
             <span className={styles.rightContainer}>
                 <span className={seriesStyles.buttonContainer}>
-                    <Button>
+                    <Button onClick={() => decreaseEpisodeCount(series.id)}>
                         <i className='fa fa-minus' />
                     </Button>
 
-                    <Button>
+                    <Button onClick={() => increaseEpisodeCount(series.id)}>
                     <i className='fa fa-plus' />
                     </Button>
                 </span>
-                <p>{ moment(serie.updatedAt).format('DD/MM')}</p>
+                <p>{ moment(series.updatedAt).format('DD/MM')}</p>
             </span>
         </div>
     );
 };
 
-export default SeriesListItem;
+export default connect(
+    null,
+    {
+        increaseEpisodeCount,
+        decreaseEpisodeCount
+    }
+)(SeriesListItem);

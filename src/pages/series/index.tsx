@@ -4,6 +4,7 @@ import SeriesList from "../../components/lists/seriesList/SeriesList";
 import Create from "./create";
 import {connect} from "react-redux";
 import {setHeaderTitle, setPreviousRoute} from "../../redux/actions/uiStateActions";
+import Details from "./details";
 
 interface IProps {
     setHeaderTitle: (title: string) => void;
@@ -26,7 +27,8 @@ const Index = (props: IProps) => {
     return (
         <Switch>
             <Route exact path="/series" component={SeriesList} />
-            <Route exact path="/series/create" component={Create} />
+            <Route path="/series/create" component={Create} />
+            <Route path="/series/:id" component={Details} />
         </Switch>
     );
 };
