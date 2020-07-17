@@ -1,0 +1,23 @@
+.fab {
+    position: fixed;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+    align-items: center;
+    bottom: 15%;
+    right: 5%;
+    padding: 30px;
+    color: whitesmoke;
+    border: black;
+    background-color: #202224;
+    border-radius: 50%;
+}
+
+.fab:active {
+    background-color: #232527;
+    transform: translateY(4px);
+}

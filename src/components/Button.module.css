@@ -1,0 +1,17 @@
+.button {
+    border: 1px solid #505050;
+    padding: 10px;
+    background-color: #232527;
+    color: whitesmoke;
+    cursor: pointer;
+    border-radius: 3px;
+    margin: 4px 0;
+}
+
+.danger {
+    background-color: darkred;
+}
+
+.button:focus {
+    outline: none;
+}

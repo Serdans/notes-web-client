@@ -1,0 +1,32 @@
+.listItem {
+    padding: 10px;
+    background-color: dimgrey;
+    color: lightgray;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+.leftContainer {
+    flex: 4
+}
+
+.rightContainer {
+    flex: 1;
+    text-align: right;
+}
+
+.listItem h4 {
+    margin: 0;
+}
+
+.listItem p {
+    margin: 0;
+    align-self: center;
+    max-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

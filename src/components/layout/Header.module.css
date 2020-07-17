@@ -1,0 +1,35 @@
+.header {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    color: whitesmoke;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    background: linear-gradient(to bottom, #2b2d30, #2a3030);
+}
+
+.rightButton {
+    margin-left: auto;
+}
+
+.headerButton {
+    padding: 20px;
+    background: none;
+    cursor: pointer;
+    color: whitesmoke;
+    border: none;
+    font-size: 1.5em;
+}
+
+.headerButton:focus {
+    outline: none;
+    background: #303737;
+    border-radius: 50%;
+    transition-duration: 0.2s;
+}
+
+.settings {
+    justify-self: end;
+}

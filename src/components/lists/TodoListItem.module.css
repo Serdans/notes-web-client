@@ -1,0 +1,10 @@
+.done {
+    text-decoration: line-through black;
+    font-style: italic;
+}
+
+.delete {
+    text-align: right;
+    padding-left: 20%;
+    color: darkred;
+}

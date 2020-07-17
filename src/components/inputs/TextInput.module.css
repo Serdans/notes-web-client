@@ -1,0 +1,18 @@
+.textInput {
+    width: 100%;
+    height: 30px;
+    border: 1px solid #2b2d30;
+    border-radius: 5px;
+    color: whitesmoke;
+    background-color: #313437;
+    font-size: 1.25em;
+}
+
+.label {
+    color: whitesmoke;
+    display: block;
+}
+
+.textInput:focus {
+    outline: #313437 1px;
+}
