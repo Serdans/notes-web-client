@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {IRootState} from "../../redux/interfaces/IRootState";
-import EmptyListScreen from "./EmptyListScreen";
-import FloatingActionButton from "./../FloatingActionButton";
-import styles from './NoteList.module.css';
+import {IRootState} from "../../../redux/interfaces/IRootState";
+import EmptyListScreen from "../EmptyListScreen";
+import FloatingActionButton from "../../FloatingActionButton";
+import styles from '../ListItem.module.css';
 import {Link} from "react-router-dom";
-import {ITodo} from "../../interfaces/ITodo";
-import {getAllTodos} from "../../redux/selectors/todoSelectors";
+import {ITodo} from "../../../interfaces/ITodo";
+import {getAllTodos} from "../../../redux/selectors/todoSelectors";
 import TodoListItem from "./TodoListItem";
 
 interface IProps {

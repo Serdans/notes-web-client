@@ -8,8 +8,9 @@ export const defaultUIState: IUIState = {
 
 const initialState: IRootState = {
     uiState: defaultUIState,
+    notes: [],
     todos: [],
-    notes: []
+    series: [],
 };
 
 export default initialState;

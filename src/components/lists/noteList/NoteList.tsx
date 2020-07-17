@@ -1,12 +1,11 @@
 import React from 'react';
-import {INote} from "../../interfaces/INote";
+import {INote} from "../../../interfaces/INote";
 import { connect } from 'react-redux';
 import NoteListItem from "./NoteListItem";
-import {getAllNotes} from "../../redux/selectors/noteSelectors";
-import {IRootState} from "../../redux/interfaces/IRootState";
-import EmptyListScreen from "./EmptyListScreen";
-import FloatingActionButton from "../FloatingActionButton";
-import styles from './NoteList.module.css';
+import {getAllNotes} from "../../../redux/selectors/noteSelectors";
+import {IRootState} from "../../../redux/interfaces/IRootState";
+import EmptyListScreen from "../EmptyListScreen";
+import FloatingActionButton from "../../FloatingActionButton";
 import {Link} from "react-router-dom";
 
 interface IProps {
@@ -39,7 +38,7 @@ const NoteList = (props: IProps) => {
     };
 
     return (
-        <div className={styles.list}>
+        <div>
             { renderNotes() }
         </div>
     );

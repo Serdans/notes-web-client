@@ -15,14 +15,13 @@ const TextAreaInput = (props: IProps) => {
     return (
         <label className={`${styles.label} ${styles.input}`}>
             {label}
-            <textarea
-                value={value}
-                className={`${textAreaStyles.textarea} ${styles.input}`}
-                onChange={(e) => {
-                    onChange(e.target.value);
-                }}
-            />
         </label>
+        <textarea
+            value={value}
+            className={`${textAreaStyles.textarea} ${styles.input}`}
+            onChange={(e) => {
+                onChange(e.target.value);}}
+                />
     );
 };
 

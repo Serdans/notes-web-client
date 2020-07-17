@@ -1,0 +1,9 @@
+.leftContainerContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonContainer {
+    display: flex;
+    padding: 0 10px;
+}

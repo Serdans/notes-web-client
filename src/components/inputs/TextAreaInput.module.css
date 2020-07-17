@@ -1,7 +1,3 @@
-.inputGroup {
-    margin: 10px 0;
-}
-
 .textarea {
     font-size: 1.25em;
     width: 100%;
@@ -10,13 +6,4 @@
     color: whitesmoke;
     border: 1px solid #2b2d30;
     background-color: #313437;
-}
-
-.textarea:focus {
-    outline: #313437 1px;
-}
-
-.label {
-    color: whitesmoke;
-    display: block;
 }

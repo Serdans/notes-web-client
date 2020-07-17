@@ -2,47 +2,51 @@ import React, {useEffect, useState} from 'react';
 import {connect} from "react-redux";
 import {setHeaderTitle, setPreviousRoute} from "../../redux/actions/uiStateActions";
 import TextInput from "../../components/inputs/TextInput";
-import styles from './create.module.css';
-import TextAreaInput from "../../components/inputs/TextAreaInput";
+import styles from '../notes/create.module.css';
 import Button from "../../components/Button";
-import {createNote} from "../../redux/actions/noteActions";
 import { useHistory } from 'react-router-dom';
+import {createSeries} from "../../redux/actions/seriesActions";
+import NumberInput from "../../components/inputs/NumberInput";
 
 interface IProps {
     setPreviousRoute: (route: string) => void;
     setHeaderTitle: (title: string) => void;
-    createNote: (title: string, description: string) => void;
+    createSeries: (title: string, totalEpisodes: number) => void;
 }
 
 const Create = (props: IProps) => {
 
-    const { setPreviousRoute, setHeaderTitle, createNote } = props;
+    const { setPreviousRoute, setHeaderTitle, createSeries } = props;
 
     const history = useHistory();
 
     useEffect(() => {
-        setPreviousRoute('/notes');
-        setHeaderTitle('Create Note');
+        setPreviousRoute('/series');
+        setHeaderTitle('Create Series');
     }, [setPreviousRoute, setHeaderTitle]);
 
-    const [title, setTitle] = useState<string>('');
-    const [description, setDescription] = useState<string>('');
+    const [name, setName] = useState<string>('');
+    const [totalEpisodes, setTotalEpisodes] = useState<number>(0);
 
     return (
         <div className={styles.formContainer}>
             <TextInput
-                onChange={setTitle}
-                label={'Title'}
+                value={name}
+                onChange={setName}
+                label={'Name'}
             />
-            <TextAreaInput
-                onChange={setDescription}
-                label={'Description'}
+
+            <NumberInput
+                value={totalEpisodes}
+                onChange={setTotalEpisodes}
+                label={'Total Episodes'}
             />
+
             <Button onClick={() => {
-                createNote(title, description);
-                history.push('/notes');
+                createSeries(name, totalEpisodes);
+                history.push('/series');
             }}>
-                Create Note
+                Create Series
             </Button>
         </div>
     );
@@ -53,6 +57,6 @@ export default connect(
     {
         setPreviousRoute,
         setHeaderTitle,
-        createNote
+        createSeries
     }
 )(Create);

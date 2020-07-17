@@ -2,12 +2,12 @@ import React from 'react';
 import styles from './Input.module.css';
 
 interface IProps {
-    value?: string;
+    value?: number;
     label?: string;
-    onChange: (text: string) => void;
+    onChange: (number: number) => void;
 }
 
-const TextInput = (props: IProps) => {
+const NumberInput = (props: IProps) => {
 
     const { value, label, onChange } = props;
 
@@ -15,15 +15,15 @@ const TextInput = (props: IProps) => {
         <label className={styles.label}>
             { label }
             <input
-                value={value}
                 className={`${styles.singleLineInput} ${styles.input}`}
+                value={value}
+                min={0  }
+                type='number'
                 onChange={(e) => {
-                    onChange(e.target.value);
-                }}
-            />
+                    onChange(parseInt(e.target.value));
+                }}/>
         </label>
-
     );
 };
 
-export default TextInput;
+export default NumberInput;

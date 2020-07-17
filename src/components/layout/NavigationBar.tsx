@@ -15,6 +15,11 @@ const NavigationBar = () => {
                 <i className='fa fa-check-square-o'/>
                 Todos
             </NavLink>
+
+            <NavLink to='/series' className={styles.navOption} activeClassName={styles.activeOption}>
+                <i className='fa fa-film'/>
+                Series
+            </NavLink>
         </div>
     );
 };

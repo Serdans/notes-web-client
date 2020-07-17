@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
+import {Route, Switch, useLocation} from "react-router-dom";
+import SeriesList from "../../components/lists/seriesList/SeriesList";
+import Create from "./create";
 import {connect} from "react-redux";
 import {setHeaderTitle, setPreviousRoute} from "../../redux/actions/uiStateActions";
-import {useLocation, Switch, Route} from 'react-router-dom';
-import TodoList from "../../components/lists/todoList/TodoList";
-import Create from "./create";
 
 interface IProps {
     setHeaderTitle: (title: string) => void;
@@ -16,21 +16,22 @@ const Index = (props: IProps) => {
     const location = useLocation();
 
     useEffect(() => {
-        if (location.pathname === '/todos') {
-            setHeaderTitle('Todos');
+        if (location.pathname === '/series') {
+            setHeaderTitle('Series');
             setPreviousRoute('');
         }
     }, [setHeaderTitle, setPreviousRoute, location.pathname]);
 
+
     return (
         <Switch>
-            <Route exact path="/todos" component={TodoList} />
-            <Route exact path="/todos/create" component={Create} />
+            <Route exact path="/series" component={SeriesList} />
+            <Route exact path="/series/create" component={Create} />
         </Switch>
     );
 };
 
-const TodoIndex = connect(
+const SeriesIndex = connect(
     null,
     {
         setHeaderTitle,
@@ -38,4 +39,4 @@ const TodoIndex = connect(
     }
 )(Index);
 
-export default TodoIndex;
+export default SeriesIndex;

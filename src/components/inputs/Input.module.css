@@ -1,5 +1,11 @@
-.textInput {
-    width: 100%;
+.label {
+    color: whitesmoke;
+    display: block;
+    margin: 10px 0;
+}
+
+.singleLineInput {
+    width: 99%;
     height: 30px;
     border: 1px solid #2b2d30;
     border-radius: 5px;
@@ -8,11 +14,6 @@
     font-size: 1.25em;
 }
 
-.label {
-    color: whitesmoke;
-    display: block;
-}
-
-.textInput:focus {
+.input:focus {
     outline: #313437 1px;
 }

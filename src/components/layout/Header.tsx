@@ -22,7 +22,7 @@ const Header = (props: IProps) => {
         if (headerTitle === 'Todos' || headerTitle === 'Notes') {
             setPreviousRoute('');
         }
-    }, [headerTitle]);
+    }, [setPreviousRoute, headerTitle]);
 
     const renderLeftButton = (): JSX.Element => {
         if (previousRoute) {

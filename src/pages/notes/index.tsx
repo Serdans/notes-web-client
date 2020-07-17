@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import NoteList from "../../components/lists/NoteList";
+import NoteList from "../../components/lists/noteList/NoteList";
 import {connect} from "react-redux";
 import {setHeaderTitle, setPreviousRoute} from "../../redux/actions/uiStateActions";
 import { Switch, Route, useLocation } from 'react-router-dom';

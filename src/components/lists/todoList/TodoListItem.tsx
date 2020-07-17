@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from './ListItem.module.css';
-import todoStyles from'./TodoListItem.module.css';
-import {ITodo} from "../../interfaces/ITodo";
+import styles from '../ListItem.module.css';
+import todoStyles from './TodoListItem.module.css';
+import {ITodo} from "../../../interfaces/ITodo";
 import moment from "moment";
 import {connect} from "react-redux";
-import {deleteTodo, toggleTodo} from "../../redux/actions/todoActions";
+import {deleteTodo, toggleTodo} from "../../../redux/actions/todoActions";
 
 interface IProps {
     todo: ITodo;
