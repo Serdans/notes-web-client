@@ -14,3 +14,10 @@ export const setPreviousRoute = (route: string): IUIAction => ({
         previousRoute: route
     }
 });
+
+export const setPinnedHomeRoute = (route: string): IUIAction => ({
+    type: UIAction.SET_PINNED_HOME_ROUTE,
+    payload: {
+        pinnedHomeRoute: route
+    }
+});

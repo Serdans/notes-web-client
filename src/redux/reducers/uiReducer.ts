@@ -20,6 +20,11 @@ const uiReducer = (state: IUIState, action: IUIAction): IUIState => {
                 ...state,
                 previousRoute: action.payload.previousRoute ?? ''
             };
+        case UIAction.SET_PINNED_HOME_ROUTE:
+            return {
+                ...state,
+                pinnedHomeRoute: action.payload.pinnedHomeRoute ?? '/notes'
+            };
         default:
             return state;
     }

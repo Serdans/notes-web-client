@@ -10,6 +10,14 @@
     background: linear-gradient(to bottom, #2b2d30, #2a3030);
 }
 
+.pin {
+    color: grey;
+}
+
+.activePin {
+    color: whitesmoke;
+}
+
 .rightButton {
     margin-left: auto;
 }
@@ -18,9 +26,12 @@
     padding: 20px;
     background: none;
     cursor: pointer;
-    color: whitesmoke;
     border: none;
     font-size: 1.5em;
+}
+
+.regularHeaderButton {
+    color: whitesmoke;
 }
 
 .headerButton:focus {

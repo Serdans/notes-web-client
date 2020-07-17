@@ -3,6 +3,7 @@ import {IUIState} from "./interfaces/IUIState";
 
 export const defaultUIState: IUIState = {
     headerTitle: 'Notes',
+    pinnedHomeRoute: '/notes',
     previousRoute: ''
 };
 

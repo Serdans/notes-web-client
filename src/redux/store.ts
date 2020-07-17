@@ -18,6 +18,7 @@ const rootReducer: any = combineReducers(
 
 const initialState: IRootState = {
     uiState: {
+        pinnedHomeRoute: LocalStorageService.get('homeRoute') || '/notes',
         previousRoute: '',
         headerTitle: ''
     },
@@ -32,6 +33,7 @@ const store = createStore(
 );
 
 store.subscribe(() => {
+    LocalStorageService.set('homeRoute', store.getState().uiState.pinnedHomeRoute);
     LocalStorageService.set('notes', store.getState().notes);
     LocalStorageService.set('todos', store.getState().todos);
     LocalStorageService.set('series', store.getState().series);

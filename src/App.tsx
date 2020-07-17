@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import React from 'react';
+import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import './App.css';
 import Layout from "./components/layout/Layout";
 import NoteIndex from "./pages/notes";
@@ -11,14 +11,14 @@ import SeriesIndex from "./pages/series";
 
 function App() {
 
-
-    useEffect(() => {
-
-    });
+    const returnRedirect = () => {
+        return <Redirect to={store.getState().uiState.pinnedHomeRoute} />
+    };
 
     return (
         <Provider store={store}>
             <Router>
+                { returnRedirect() }
                 <Layout>
                     <Switch>
                         <Route path="/notes" component={NoteIndex}/>
