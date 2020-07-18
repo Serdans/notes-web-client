@@ -23,7 +23,7 @@ const TodoList = (props: IProps) => {
                 <>
                     { todos.map(td => <TodoListItem key={td.id} todo={td} />) }
                     <Link to={'/todos/create'}>
-                        <FloatingActionButton />
+                        <FloatingActionButton title={'Create Todo'} />
                     </Link>
                 </>
             )

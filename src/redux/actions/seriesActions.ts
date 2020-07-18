@@ -34,14 +34,16 @@ export const deleteSeries = (id: string): ISeriesAction => ({
 export const increaseEpisodeCount = (id: string): ISeriesAction => ({
     type: SeriesAction.INCREASE_COUNT,
     payload: {
-        id
+        id,
+        updatedAt: moment().toISOString()
     }
 });
 
 export const decreaseEpisodeCount = (id: string): ISeriesAction => ({
     type: SeriesAction.DECREASE_COUNT,
     payload: {
-        id
+        id,
+        updatedAt: moment().toISOString()
     }
 });
 

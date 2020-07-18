@@ -22,7 +22,7 @@ const NoteList = (props: IProps) => {
                 <>
                     { notes.map(note => <NoteListItem key={note.id} note={note} />) }
                     <Link to={'/notes/create'}>
-                        <FloatingActionButton />
+                        <FloatingActionButton title={'Create Note'}/>
                     </Link>
                 </>
             )

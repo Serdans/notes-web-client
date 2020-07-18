@@ -25,7 +25,9 @@ const seriesReducer: Reducer<Array<ISeries>, ISeriesAction> =
             return state.map((s) => {
                 if (s.id === action.payload.id && s.currentEpisode < s.totalEpisodes) {
                     return produce(s, sDraft => {
+                        const { updatedAt } = action.payload;
                         sDraft.currentEpisode++;
+                        sDraft.updatedAt = updatedAt ? updatedAt : sDraft.updatedAt;
                     });
                 }
                 return s;
@@ -34,7 +36,9 @@ const seriesReducer: Reducer<Array<ISeries>, ISeriesAction> =
             return state.map((s) => {
                 if (s.id === action.payload.id && s.currentEpisode > 0) {
                     return produce(s, sDraft => {
+                        const { updatedAt } = action.payload;
                         sDraft.currentEpisode--;
+                        sDraft.updatedAt = updatedAt ? updatedAt : sDraft.updatedAt;
                     });
                 }
                 return s;

@@ -18,7 +18,7 @@ const NoteListItem = (props: IProps) => {
                 <h4>{ note.title }</h4>
                 <p>{ note.description }</p>
             </span>
-            <p className={styles.rightContainer}> { moment(note.updatedAt).format('DD/MM')} </p>
+            <span className={styles.rightContainer}> { moment(note.updatedAt).format('DD/MM hh:mm')} </span>
         </Link>
     );
 };

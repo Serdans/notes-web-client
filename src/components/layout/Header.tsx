@@ -32,7 +32,7 @@ const Header = (props: IProps) => {
         if (previousRoute) {
             return (
                 <Link to={previousRoute}>
-                    <button className={styles.headerButton}>
+                    <button className={`${styles.headerButton} ${styles.regularHeaderButton}`}>
                         <i className='fa fa-arrow-left' />
                     </button>
                 </Link>

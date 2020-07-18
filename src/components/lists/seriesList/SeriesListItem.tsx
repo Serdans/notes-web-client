@@ -35,7 +35,7 @@ const SeriesListItem = (props: IProps) => {
                     <i className='fa fa-plus' />
                     </Button>
                 </span>
-                <p>{ moment(series.updatedAt).format('DD/MM')}</p>
+                { moment(series.updatedAt).format('DD/MM hh:mm')}
             </span>
         </div>
     );

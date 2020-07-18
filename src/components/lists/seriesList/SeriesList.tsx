@@ -23,7 +23,7 @@ const SeriesList = (props: IProps) => {
                 <>
                     { series.map((s) => <SeriesListItem key={s.id} series={s} />)}
                     <Link to={'/series/create'}>
-                        <FloatingActionButton />
+                        <FloatingActionButton title={'Create Series'} />
                     </Link>
                 </>
             )

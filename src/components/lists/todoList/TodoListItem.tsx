@@ -21,7 +21,7 @@ const TodoListItem = (props: IProps) => {
             <h4 className={`${todo.done && todoStyles.done} ${styles.leftContainer}`}>{todo.description}</h4>
             <span className={styles.rightContainer}>
                 <input checked={todo.done || false} type='checkbox' onChange={() => toggleTodo(todo.id)}/>
-                {moment(todo.updatedAt).format('DD/MM')}
+                {moment(todo.updatedAt).format('DD/MM hh:mm')}
                 <i className={`fa fa-trash-o ${todoStyles.delete}`} onClick={() => deleteTodo(todo.id)} />
             </span>
         </div>
